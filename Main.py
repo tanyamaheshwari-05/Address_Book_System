@@ -1,7 +1,7 @@
 from Contact import Contact
 from Operations.edit import edit_user
 from AddressBook import  AddressBook
-
+from Operations.delete import delete_user
 
 ab=  AddressBook()
 
@@ -25,3 +25,7 @@ start()
 choice =  input("Do you want to update details ? (y/n):")
 if choice=="y" :
     edit_user(ab)
+
+choice = input ("Do you want to delete details ? (y/n):")
+if choice== "y":
+    delete_user(ab)
