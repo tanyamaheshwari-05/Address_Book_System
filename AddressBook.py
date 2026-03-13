@@ -3,6 +3,7 @@ class AddressBook:
     def __init__(self):
         self.contacts=[]
 
+#Add contact 
     def add_contact(self,contact):
         
         if any(c.first_name==contact.first_name for c in self.contacts):
@@ -16,6 +17,7 @@ class AddressBook:
         for c in self.contacts:
             c.display()
 
+# delete contact
     def delete_user(self):
         name= input("Enter name of user want to delete : ")
         for d in self.contacts:
@@ -25,6 +27,7 @@ class AddressBook:
                 return
         print("User not found.")
 
+  # edit contact       
     def edit_user(self):
             name= input("enter name of user to update contact: " )
 
@@ -77,6 +80,15 @@ class AddressBook:
                         print("Contact updated successfully !")
                 
                 print("Contact not found !")
+
+# Search by city or state 
+    def search_bycity_and_bystate(self,location):
+        result =[]
+
+        for c in self.contacts:
+            if c.city == location or c.state == location:
+                result.append(c)
+        return result
 
 
 

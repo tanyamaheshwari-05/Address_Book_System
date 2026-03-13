@@ -39,3 +39,8 @@ if choice =="y" :
 choice = input ("Do you want to delete details ? (y/n):")
 if choice == "y":
     addressBook.delete_user()
+
+location = input("Enter city or state to search : ")
+results = addressBook.search_bycity_and_bystate(location)
+for r in results:
+    r.display()
