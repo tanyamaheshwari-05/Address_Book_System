@@ -54,3 +54,9 @@ if choice == "y":
     else:
         state=input("Enter state you want to search person : ")
         addressBook.view_byState(state)
+
+
+choice = input("Do you want to count persons by city/state? (y/n): ")
+if choice == "y":
+    location = input("Enter city or state : ")
+    addressBook.show_byCity_or_byState(location)

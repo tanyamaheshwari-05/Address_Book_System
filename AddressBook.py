@@ -116,5 +116,8 @@ class AddressBook:
         else:
             print("No contact found in this state")
 
-
+#show by city and by state
+    def show_byCity_or_byState(self,location):
+        total_person= self.search_bycity_and_bystate(location)
+        print("Total person in ",location, ":" ,len(total_person))
 
