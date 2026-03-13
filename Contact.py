@@ -18,3 +18,6 @@ class Contact:
         print("Zip : ",self.zip_code)
         print("Phone number : ",self.phone_number)
         print("Email : ",self.email)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name} {self.city} {self.address}{self.state}{self.zip_code}{self.phone_number}{self.email}"

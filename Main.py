@@ -60,3 +60,7 @@ choice = input("Do you want to count persons by city/state? (y/n): ")
 if choice == "y":
     location = input("Enter city or state : ")
     addressBook.show_byCity_or_byState(location)
+
+choice = input("Do you want to sort contact by name ?(y/n):")
+if choice == "y":
+    addressBook.sort_by_name()

@@ -25,7 +25,8 @@ class AddressBook:
 
     def display_contact(self):    
         for c in self.contacts:
-            c.display()
+            # c.display()
+            print(c)
 
 # delete contact
     def delete_user(self):
@@ -104,7 +105,8 @@ class AddressBook:
     def view_byCity(self,city):
         if city in self.city_dict:
             for c in self.city_dict[city]:
-                c.display()
+                # c.display()
+                print(c)
         else:
             print("No contact found in this city")
 
@@ -112,7 +114,8 @@ class AddressBook:
     def view_byState(self,state):
         if state in self.state_dict:
             for s in self.state_dict[state]:
-                s.display()
+                # s.display()
+                print(s)
         else:
             print("No contact found in this state")
 
@@ -121,3 +124,10 @@ class AddressBook:
         total_person= self.search_bycity_and_bystate(location)
         print("Total person in ",location, ":" ,len(total_person))
 
+# sort alphabetically 
+    def sort_by_name(self):
+        self.contacts.sort(key=lambda c : c.first_name.lower())
+        print("\nContacts Sorted Alphabetically:\n")
+
+        for c in self.contacts:
+            print(c)
