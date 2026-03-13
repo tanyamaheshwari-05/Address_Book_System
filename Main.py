@@ -1,10 +1,12 @@
 from contact import Contact
 
 from addressBook import  AddressBook
+from addressBookManager import AddressBookManager
 
-
-
-ab=  AddressBook()
+address_bookmanager_obj=  AddressBookManager()
+book_name = input("Enter Address Book Name : ")
+address_bookmanager_obj.add_book(book_name)
+addressBook = address_bookmanager_obj.get_book(book_name)
 
 def start():
         print("Welcome to Address Book program")
@@ -21,8 +23,8 @@ def start():
         
             contact= Contact(first_name,last_name,address,city,state,zip_code,phone_number,email)
             
-            ab.add_contact(contact)
-            ab.display_contact()
+            addressBook.add_contact(contact)
+            addressBook.display_contact()
 
             choice = input("Do you want to add another user ? (y/n) : ")
             if(choice.lower()!="y"):
@@ -32,8 +34,8 @@ start()
 
 choice =  input("Do you want to update details ? (y/n):")
 if choice =="y" :
-    edit_user(ab)
+    addressBook.edit_user()
 
 choice = input ("Do you want to delete details ? (y/n):")
 if choice == "y":
-    delete_user(ab)
+    addressBook.delete_user()

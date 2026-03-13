@@ -11,19 +11,19 @@ class AddressBook:
         for c in self.contacts:
             c.display()
 
-    def delete_user(AddressBook):
+    def delete_user(self):
         name= input("Enter name of user want to delete : ")
-        for d in AddressBook.contacts:
+        for d in self.contacts:
             if d.first_name == name :
-                AddressBook.contacts.remove(d)
+                self.contacts.remove(d)
                 print("User deleted successfully")
                 return
         print("User not found.")
 
-    def edit_user(AddressBook):
+    def edit_user(self):
             name= input("enter name of user to update contact: " )
 
-            for c in AddressBook.contacts:
+            for c in self.contacts:
                 if c.first_name ==name:
 
                     edit=True
