@@ -4,6 +4,11 @@ class AddressBook:
         self.contacts=[]
 
     def add_contact(self,contact):
+        
+        if any(c.first_name==contact.first_name for c in self.contacts):
+            print("Duplicate contact not allowed")
+            return
+
         self.contacts.append(contact)
         print("\nContact Added Successfully")
 

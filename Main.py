@@ -1,6 +1,6 @@
 from contact import Contact
 
-from addressBook import  AddressBook
+from AddressBook import  AddressBook
 from addressBookManager import AddressBookManager
 
 address_bookmanager_obj=  AddressBookManager()
