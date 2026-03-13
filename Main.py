@@ -44,3 +44,13 @@ location = input("Enter city or state to search : ")
 results = addressBook.search_bycity_and_bystate(location)
 for r in results:
     r.display()
+
+choice = input("Do you view person by city or state?(y/n): ")
+if choice == "y":
+    option= input("Enter choice by which one ?(city /State) : ")
+    if option =="city":
+        city = input("Enter city you want to search person : ")
+        addressBook.view_byCity(city)
+    else:
+        state=input("Enter state you want to search person : ")
+        addressBook.view_byState(state)

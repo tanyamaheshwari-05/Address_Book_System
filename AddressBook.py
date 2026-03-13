@@ -2,6 +2,8 @@ class AddressBook:
 
     def __init__(self):
         self.contacts=[]
+        self.city_dict={}
+        self.state_dict={}
 
 #Add contact 
     def add_contact(self,contact):
@@ -11,6 +13,14 @@ class AddressBook:
             return
 
         self.contacts.append(contact)
+
+        if contact.city not in self.city_dict:
+            self.city_dict[contact.city]= []
+            self.city_dict[contact.city].append(contact)
+
+        if contact.state not in self.state_dict:
+            self.state_dict[contact.state]=[]
+            self.state_dict[contact.state].append(contact)
         print("\nContact Added Successfully")
 
     def display_contact(self):    
@@ -89,6 +99,22 @@ class AddressBook:
             if c.city == location or c.state == location:
                 result.append(c)
         return result
+
+# view by city
+    def view_byCity(self,city):
+        if city in self.city_dict:
+            for c in self.city_dict[city]:
+                c.display()
+        else:
+            print("No contact found in this city")
+
+# view by state
+    def view_byState(self,state):
+        if state in self.state_dict:
+            for s in self.state_dict[state]:
+                s.display()
+        else:
+            print("No contact found in this state")
 
 
 
